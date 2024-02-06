@@ -58,6 +58,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/backgroundd.png
     - assets/img0.jpg
     - assets/img1.jpg
     - assets/img2.jpg
