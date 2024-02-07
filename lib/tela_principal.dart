@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:photography_app/Photogrid.dart';
 
 class TelaPrincipal extends StatefulWidget {
   const TelaPrincipal({super.key});
@@ -48,76 +49,12 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
                           _current = index;
                         });
                       }),
-                  items: [
-                    SizedBox(
-                      height: _scalableHeight(context),
-                      width: _scalableWidth(context),
-                      child: GridView.count(
-                        crossAxisCount: 3,
-                        crossAxisSpacing: 16,
-                        mainAxisSpacing: 16,
-                        padding: const EdgeInsets.all(16),
-                        children: List.generate(
-                          6,
-                          (index) => Image.asset(
-                            'img$index.jpg',
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: _scalableHeight(context),
-                      width: _scalableWidth(context),
-                      child: GridView.count(
-                        crossAxisCount: 3,
-                        crossAxisSpacing: 16,
-                        mainAxisSpacing: 16,
-                        padding: const EdgeInsets.all(16),
-                        children: List.generate(
-                          6,
-                          (index) => Image.asset(
-                            'img${index + 6}.jpg',
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: _scalableHeight(context),
-                      width: _scalableWidth(context),
-                      child: GridView.count(
-                        crossAxisCount: 3,
-                        crossAxisSpacing: 16,
-                        mainAxisSpacing: 16,
-                        padding: const EdgeInsets.all(16),
-                        children: List.generate(
-                          6,
-                          (index) => Image.asset(
-                            'img${index + 12}.jpg',
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: _scalableHeight(context),
-                      width: _scalableWidth(context),
-                      child: GridView.count(
-                        crossAxisCount: 3,
-                        crossAxisSpacing: 16,
-                        mainAxisSpacing: 16,
-                        padding: const EdgeInsets.all(16),
-                        children: List.generate(
-                          2,
-                          (index) => Image.asset(
-                            'img${index + 18}.jpg',
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                  items: const [
+                    PhotoGrid(startIn: 0),
+                    PhotoGrid(startIn: 6),
+                    PhotoGrid(startIn: 12),
+                    PhotoGrid(startIn: 18, gridSize: 2),
+                ],
                 ),
               ),
               Row(

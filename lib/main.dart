@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:photography_app/tela_principal.dart';
 
 void main() {
@@ -10,7 +11,7 @@ class Aplicativo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
+    return const MaterialApp(
       title: 'Photography Birthday',
       home: TelaPrincipal(),
     );
